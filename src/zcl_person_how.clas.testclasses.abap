@@ -21,8 +21,6 @@ CLASS lcl_person_how IMPLEMENTATION.
 
   METHOD setup.
     builder = NEW #( ).
-*    builder->zif_person_builder_how~set_age( '20' )->zif_person_builder_how~set_name( 'Howard' ).
-*    cut = builder->zif_person_builder_how~get_person( ).
   ENDMETHOD.
 
   METHOD teardown.
@@ -31,21 +29,21 @@ CLASS lcl_person_how IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD verify_person_details_01.
-    builder->zif_person_builder_how~set_age( '20' )->zif_person_builder_how~set_name( 'Howard' ).
+    builder->zif_person_builder_how~set_age( 20 )->zif_person_builder_how~set_name( 'Howard' ).
     cut = builder->zif_person_builder_how~get_person( ).
 
     cl_abap_unit_assert=>assert_equals( act = cut->display_person( )
                                         exp = VALUE zif_person_how=>ty_person_details( name = 'Howard'
-                                                                                       age = '20' ) ).
+                                                                                       age = 20 ) ).
   ENDMETHOD.
 
   METHOD verify_person_details_02.
-    builder->zif_person_builder_how~set_age( '22' )->zif_person_builder_how~set_name( 'How' ).
+    builder->zif_person_builder_how~set_age( 22 )->zif_person_builder_how~set_name( 'How' ).
     cut = builder->zif_person_builder_how~get_person( ).
 
     cl_abap_unit_assert=>assert_equals( act = cut->display_person( )
                                         exp = VALUE zif_person_how=>ty_person_details( name = 'How'
-                                                                                       age = '22' ) ).
+                                                                                       age = 22 ) ).
   ENDMETHOD.
 
 ENDCLASS.
