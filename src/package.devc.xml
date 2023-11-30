@@ -3,8 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>package for custom apps -howard</CTEXT>
-    <TPCLASS>X</TPCLASS>
+    <CTEXT>oop concepts</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>
